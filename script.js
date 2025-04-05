@@ -23,12 +23,16 @@ class WikiApp {
   }
 
   async loadInitialMD() {
-    const activeLink = document.querySelector('.sub-item.active');
+    document.querySelectorAll('.sub-item.active').forEach(link => link.classList.remove('active'));
+  
+    const activeLink = document.querySelector('.sub-item[data-md]');
     if (activeLink) {
+      activeLink.classList.add('active');
       await this.loadMD(activeLink.dataset.md);
       this.setupCollapsibleSections();
     }
   }
+  
 
   handleGlobalClick(e) {
     if (!e.target.closest('.search-container')) {

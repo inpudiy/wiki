@@ -1,9 +1,11 @@
+/* Сброс и базовые стили */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Переменные темы */
 :root {
   --bg: #121212;
   --bg-light: #151515;
@@ -14,9 +16,11 @@
   --text-secondary: #bbb;
   --highlight: #2a2a2a;
 
+  /* Переменные для инлайн кода */
   --code-bg: #1e1e1e;
   --code-text: #e0e0e0;
 
+  /* Переменные для блоков кода с подсветкой */
   --code-block-bg: #0d0d0d;
   --code-block-border: #444;
 }
@@ -31,9 +35,11 @@
   --text-secondary: #495057;
   --highlight: #e9ecef;
 
+  /* Для инлайн кода */
   --code-bg: #f3f4f6;
   --code-text: #1f2937;
 
+  /* Для блоков кода */
   --code-block-bg: #f5f5f5;
   --code-block-border: #ddd;
 }
@@ -54,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0.8em 0 0.6em;
 }
 
+/* Стили для кнопки сворачивания с иконкой Font Awesome */
 .collapser {
   background: none;
   border: none;
@@ -65,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 10px;
 }
 
+/* Показываем кнопку при наведении на заголовок внутри контента */
 #content h1:hover .collapser,
 #content h2:hover .collapser,
 #content h3:hover .collapser {
@@ -205,6 +213,7 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 8px rgba(224, 224, 224, 0.2);
 }
 
+/* Отступ для основного контента (уменьшённый) */
 .main-content {
   margin-top: 30px;
   margin-left: 260px;
@@ -214,6 +223,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: margin 0.3s;
 }
 
+/* Стили для навигационных ссылок */
 .sub-item {
   display: block;
   padding: 8px 10px;
@@ -247,6 +257,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.3s, background-color 0.3s;
 }
 
+/* Стили для markdown-контента */
 .markdown-body {
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -256,6 +267,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 20px;
 }
 
+/* Инлайн код (оставляем без изменений) */
 .markdown-body code {
   background: var(--code-bg);
   color: var(--code-text);
@@ -264,6 +276,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Fira Code', monospace;
 }
 
+/* Блоки кода с подсветкой (Markdown) */
 .markdown-body pre {
   background: var(--code-block-bg);
   color: var(--code-text);
@@ -273,6 +286,16 @@ h1, h2, h3, h4, h5, h6 {
   overflow-x: auto;
 }
 
+/* Переопределяем стандартные стили highlight.js для блоков кода */
+.hljs {
+  background: var(--code-block-bg) !important;
+  color: var(--code-text) !important;
+  border: 1px solid var(--code-block-border) !important;
+  padding: 12px !important;
+  border-radius: 6px !important;
+}
+
+/* Остальные элементы Markdown */
 .markdown-body blockquote {
   background: var(--highlight);
   border-left: 4px solid var(--border);
@@ -336,3 +359,5 @@ h1, h2, h3, h4, h5, h6 {
     min-width: auto;
   }
 }
+
+
